@@ -1,0 +1,22 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: project-deployment
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels: 
+      app: project-deployment
+  ports:
+    - nodePort: 30613
+      port: 8080
+      targetPort: 80
+  template: 
+    metadata: 
+      labels: 
+        app: project-deployment
+    spec: 
+      containers:
+      - name: nginxproject-container
+        image: nginx
