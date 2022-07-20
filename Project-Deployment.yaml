@@ -1,22 +1,23 @@
 --- 
-apiVersion: apps/v1
+apiVersion: apps/version1.0
 kind: Deployment
 metadata: 
+  labels: 
+    app: devops-project
   name: project-deployment
 spec: 
+  ports: ~
   replicas: 3
   selector: 
     matchLabels: 
-      app: project-deployment
-  ports:
-    - nodePort: 30613
-      port: 8080
-      targetPort: 80
+      app: devops-project
   template: 
     metadata: 
       labels: 
-        app: project-deployment
+        app: devops-project
     spec: 
-      containers:
-      - name: nginxproject-container
-        image: nginx
+      containers: 
+        - 
+          image: "afokepeniel/devops-project:version1.0"
+          name: MyWebPages
+
