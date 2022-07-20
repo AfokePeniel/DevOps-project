@@ -19,5 +19,5 @@ spec:
       containers: 
         - 
           image: "afokepeniel/devops-project:version1.0"
-          name: MyWebPages
+          name: mywebpages
 
